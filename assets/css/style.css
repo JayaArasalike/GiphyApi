@@ -1,0 +1,21 @@
+button{
+	margin: 1%;
+	background: turquoise;
+	width: 100px;
+	height: 40px;
+}
+
+#animal-form{
+	margin-top: 15%;
+	float: right;
+	font-family: sans-serif;
+}
+#animal-input{
+	width: 250px;
+}
+
+#addAnimal{
+	width: 100px;
+	height: 40px;
+	background: turquoise;
+}

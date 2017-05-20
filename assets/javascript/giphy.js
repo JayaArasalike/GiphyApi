@@ -1,21 +1,29 @@
 
 	var topics = ["cats","dogs","elephants","cows","goats","sheeps","lions","tigers","chimps","monkeys","giraffes","zebras"];
-		
+
+	function addButton(buttonName) {
+		var button = $('<button>');
+		button.append(buttonName);
+		button.attr("data-animal", buttonName);
+		//adding button class
+		button.addClass("myButton");
+		$('#animalButtons').append(button);		
+	}		
 	//array of topics, which holds animals
 	for(var i=0; i < topics.length; i++) {
-		var buttons = $('<button>');
-		buttons.append(topics[i]);
-		buttons.attr("data-animal",topics[i]);
-		$('body').append(buttons);	
+		addButton(topics[i]);
 	}
 
 	//creating to div to display animals
 	var imgArea = $('<div>');
 	imgArea.attr("id","imgsHere");
 	$('body').append(imgArea);
-	//on a button specific button click
-	$("button").on("click",function(){
 
+	//on a button specific button click
+	$(document.body).on("click", ".myButton", function() {
+
+	//empty the imgs Div, before displaying other images	
+	$("#imgsHere").empty();
 	//on this button click, search this animal with data property
 	var x = $(this).data("animal");	
 	console.log("Animal clicked: ",x);
@@ -63,5 +71,16 @@
 
 		})
 
+
+	});
+
+	//add animal
+	$("#addAnimal").on("click", function(event){
+		event.preventDefault();
+		var newAnimal = $("#animal-input").val().trim();
+		console.log("New Animal: ", newAnimal);
+		topics.push(newAnimal);
+		addButton(newAnimal);
+		$("#animal-input").val("");
 
 	});
