@@ -29,7 +29,7 @@
 	console.log("Animal clicked: ",x);
 
 	//generate queryURL with apikey and limiting it to 10
-	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=dc6zaTOxFJmzC&limit=10";
+	var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + x + "&api_key=dc6zaTOxFJmzC&limit=10";
 	console.log(queryURL);
 
 		$.ajax({
@@ -37,6 +37,8 @@
 			method:"GET"
 		}).done(function(response){
 			console.log(response);
+			var results = response.data;
+
 			for(var i=0; i<response.data.length; i++) {
 
 			//create a div hold animals and rating	
@@ -44,7 +46,8 @@
 			var p = $('<p>').text("Rating :"+ response.data[i].rating);
 			
 			var animalImage = $('<img>');
-			animalImage.attr("src",response.data[i].images.original.url);
+			//animalImage.attr("src",response.data[i].images.original.url);
+			animalImage.attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state","still").attr("class","gif img-rounded img-responsive");
 			animalImage.attr("data-state","still");
 
 			var state = $(animalImage).attr("data-state");
