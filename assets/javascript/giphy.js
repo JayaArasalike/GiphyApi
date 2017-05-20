@@ -47,10 +47,10 @@
 			
 			var animalImage = $('<img>');
 			//animalImage.attr("src",response.data[i].images.original.url);
-			animalImage.attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state","still").attr("class","gif img-rounded img-responsive");
-			animalImage.attr("data-state","still");
+			animalImage.attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state","still");
+			//animalImage.attr("data-state","still");
 
-			var state = $(animalImage).attr("data-state");
+			/*var state = $(animalImage).attr("data-state");
 			console.log("state: ",state);
 
 			//if state if still, replace it with animate
@@ -61,7 +61,7 @@
       		else {
         		$(this).attr("src", $(this).attr("data-still"));
         		$(this).attr("data-state", "still");
-      		}
+      		}*/
 			
 
 			//append ratings and image to animalDiv
@@ -87,3 +87,26 @@
 		$("#animal-input").val("");
 
 	});
+
+	// event handler/click function allowing for viewing gif static/still or animated
+
+$(document).on("click", "img", function() {
+
+
+ var state = $(this).attr("data-state");
+ console.log(state)
+
+
+ if (state === "still") {
+
+   $(this).attr("src", $(this).attr("data-animate"));
+   $(this).attr("data-state", "animate");
+
+ }
+
+ else {
+
+   $(this).attr("src", $(this).attr("data-still"));
+   $(this).attr("data-state", "still");
+ }
+});
