@@ -3,16 +3,25 @@
 <head>
 	<title>Giphy buttons</title>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<div id = "animalButtons"></div>
-	<form id = "animal-form">
-		<label for = "animal-input"><strong>Add an Animal</strong></label><br>
-		<input type="text" id="animal-input"><br><br>
+	<div id="container">
+		<!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: black; color: white">
+        <h1 class="text-center">Giphy Animals</h1>
+        <h3 class="text-center">Click on a button!</h3>
+      </div>
 
-		<input id="addAnimal" type="submit" value="Submit">
-	</form>
+		<div id = "animalButtons"></div>
+			<form id = "animal-form">
+				<label for = "animal-input"><strong>Add an Animal</strong></label><br>
+				<input type="text" id="animal-input"><br><br>
+
+				<input id="addAnimal" type="submit" value="Submit">
+			</form>
 	<script type="text/javascript" src="assets/javascript/giphy.js"></script>
+	</div>
 </body>
 </html>

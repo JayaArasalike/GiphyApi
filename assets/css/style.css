@@ -1,21 +1,60 @@
-button{
+body {
+font-family: "Quicksand", sans-serif;
+
+}
+#container {
+	width: 960px;
+	margin: 0 auto;
+	
+}
+.jumbotron {
+	text-align: center;
+	padding:9%;
+	font-weight: lighter;
+	margin: 0.5%;
+	
+}
+h1{
+	font-size: 3em;
+	padding: 1%;
+
+}
+button {
 	margin: 1%;
-	background: turquoise;
+	background: #26A195;
 	width: 100px;
 	height: 40px;
+	font-size: 16px;
+	padding: 0.5%;
+	
+}
+#imgsHere,.color {
+	width: 960px;
+	margin: 0 auto;
+	display: block;
+	background: #FAF6E9;
+	
 }
 
-#animal-form{
+
+img {
+	width: 300px;
+	height: 200px;
+}
+
+#animal-form {
 	margin-top: 15%;
 	float: right;
-	font-family: sans-serif;
+	font-family: "Quicksand";
 }
-#animal-input{
+#animal-input {
 	width: 250px;
+
 }
 
-#addAnimal{
+#addAnimal {
 	width: 100px;
 	height: 40px;
-	background: turquoise;
+	background: #26A195;
+	font-size: 16px;
 }

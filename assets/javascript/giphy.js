@@ -43,25 +43,12 @@
 
 			//create a div hold animals and rating	
 			var	animalDiv = $('<div>');
+			animalDiv.attr("class", "color");
 			var p = $('<p>').text("Rating :"+ response.data[i].rating);
 			
 			var animalImage = $('<img>');
-			//animalImage.attr("src",response.data[i].images.original.url);
+			
 			animalImage.attr("src", results[i].images.fixed_height_still.url).attr("data-still", results[i].images.fixed_height_still.url).attr("data-animate", results[i].images.fixed_height.url).attr("data-state","still");
-			//animalImage.attr("data-state","still");
-
-			/*var state = $(animalImage).attr("data-state");
-			console.log("state: ",state);
-
-			//if state if still, replace it with animate
-			if (state === "still") {
-        		$(animalImage).attr("src", $(animalImage).attr("data-animate"));
-        		$(this).attr("data-state", "animate");
-      			} 
-      		else {
-        		$(this).attr("src", $(this).attr("data-still"));
-        		$(this).attr("data-state", "still");
-      		}*/
 			
 
 			//append ratings and image to animalDiv
